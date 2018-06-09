@@ -23,7 +23,7 @@ USER go
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o $HOME/main .
 RUN chmod +x $HOME/main
 
-# Statically compilre fresh for development hot reload
+# Statically compile fresh for development hot reload
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o /go/bin/fresh ./vendor/github.com/pilu/fresh
 RUN chmod +x /go/bin/fresh
 
