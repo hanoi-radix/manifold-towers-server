@@ -1,0 +1,7 @@
+.vscode/
+.idea/
+.cache/
+vendor/
+tmp/
+.DS_Store
+main

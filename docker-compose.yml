@@ -1,0 +1,8 @@
+version: "2"
+services:
+  manifold-towers-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    ports:
+      - "8080:8080"
