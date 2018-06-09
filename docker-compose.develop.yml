@@ -1,0 +1,10 @@
+version: "2"
+services:
+  manifold-towers-server:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/go/src/app/
+    command: /go/bin/fresh -c fresh.conf
