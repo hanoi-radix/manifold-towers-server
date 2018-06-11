@@ -1,0 +1,15 @@
+sudo: required
+
+language: go
+
+services:
+  - docker
+
+install:
+  - docker build -t hanoi-radix/manifold-towers-server:$TRAVIS_COMMIT -f Dockerfile .
+
+jobs:
+  include:
+    - stage: Test
+      script:
+        - docker run hanoi-radix/manifold-towers-server:$TRAVIS_COMMIT /bin/sh -c "go test ./..."
