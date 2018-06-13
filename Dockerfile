@@ -4,7 +4,7 @@ FROM golang:1.10.3 as golangBuilder
 EXPOSE 8080
 RUN useradd --user-group --create-home --shell /bin/false go
 ENV GOPATH=/go
-ENV HOME=$GOPATH/src/app
+ENV HOME=$GOPATH/src/github.com/hanoi-radix/manifold-towers-server
 
 # Install golang/dep
 WORKDIR /go
