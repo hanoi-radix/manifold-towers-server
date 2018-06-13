@@ -13,3 +13,8 @@ func Start() {
 
 	http.ListenAndServe(":8080", nil)
 }
+
+// Sum adds a and b together and returns the result
+func Sum(a int, b int) int {
+	return a + b
+}
