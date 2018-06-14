@@ -4,7 +4,7 @@ FROM golang:1.10.3 as golangBuilder
 EXPOSE 8080
 RUN useradd --user-group --create-home --shell /bin/false go
 ENV GOPATH=/go
-ENV HOME=$GOPATH/src/app
+ENV HOME=$GOPATH/src/github.com/hanoi-radix/manifold-towers-server
 
 # Install golang/dep
 WORKDIR /go
@@ -20,7 +20,7 @@ RUN dep ensure
 # Build // statically compile our app with all libraries built in
 RUN chown -R go:go $GOPATH/*
 USER go
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o $HOME/main .
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o $HOME/main ./cmd
 RUN chmod +x $HOME/main
 
 # Statically compile fresh for development hot reload
