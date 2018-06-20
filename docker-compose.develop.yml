@@ -6,5 +6,5 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./:/go/src/app/
+      - ./:/go/src/github.com/hanoi-radix/manifold-towers-server
     command: /go/bin/fresh -c fresh.conf

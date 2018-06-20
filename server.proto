@@ -1,0 +1,23 @@
+syntax = "proto3";
+package manifoldserver;
+option go_package = "pb";
+
+message Message {
+    oneof content {
+        Pong pong = 1;
+    }
+}
+
+message UserMessage {
+    oneof content {
+        Ping ping = 2;
+    }
+}
+
+message Pong {
+    uint32 Id = 1;
+}
+
+message Ping {
+    uint32 Id = 1;
+}
