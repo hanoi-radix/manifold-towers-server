@@ -19,7 +19,7 @@
 #  name = "github.com/x/y"
 #  version = "2.4.0"
 
-required = ["github.com/pilu/fresh"]
+required = ["github.com/pilu/fresh", "github.com/golang/protobuf/protoc-gen-go"]
 
 [prune]
 go-tests = true
@@ -28,3 +28,6 @@ unused-packages = true
 [[constraint]]
   branch = "master"
   name = "github.com/pilu/fresh"
+[[constraint]]
+  name = "github.com/golang/protobuf"
+  version = "1.1.0"

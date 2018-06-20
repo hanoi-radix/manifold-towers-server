@@ -2,6 +2,20 @@
 
 
 [[projects]]
+  name = "github.com/golang/protobuf"
+  packages = [
+    "proto",
+    "protoc-gen-go",
+    "protoc-gen-go/descriptor",
+    "protoc-gen-go/generator",
+    "protoc-gen-go/generator/internal/remap",
+    "protoc-gen-go/grpc",
+    "protoc-gen-go/plugin"
+  ]
+  revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
+  version = "v1.1.0"
+
+[[projects]]
   name = "github.com/howeyc/fsnotify"
   packages = ["."]
   revision = "441bbc86b167f3c1f4786afae9931403b99fdacf"
@@ -43,6 +57,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c0fcfa0ddf1282a1ffb1650e775948e8b7b6b094867fe76da6b5b6925066d5b2"
+  inputs-digest = "04ad7a2764d6a3b796b2f668579f7c4efc3286f49b50ecab569f896eb3001763"
   solver-name = "gps-cdcl"
   solver-version = 1
