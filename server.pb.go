@@ -31,7 +31,7 @@ func (m *Message) Reset()         { *m = Message{} }
 func (m *Message) String() string { return proto.CompactTextString(m) }
 func (*Message) ProtoMessage()    {}
 func (*Message) Descriptor() ([]byte, []int) {
-	return fileDescriptor_server_3c936d059d8ff8be, []int{0}
+	return fileDescriptor_server_c1380242980e2f19, []int{0}
 }
 func (m *Message) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Message.Unmarshal(m, b)
@@ -130,88 +130,88 @@ func _Message_OneofSizer(msg proto.Message) (n int) {
 	return n
 }
 
-type UserMessage struct {
+type ClientMessage struct {
 	// Types that are valid to be assigned to Content:
-	//	*UserMessage_Ping
-	Content              isUserMessage_Content `protobuf_oneof:"content"`
-	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
-	XXX_unrecognized     []byte                `json:"-"`
-	XXX_sizecache        int32                 `json:"-"`
+	//	*ClientMessage_Ping
+	Content              isClientMessage_Content `protobuf_oneof:"content"`
+	XXX_NoUnkeyedLiteral struct{}                `json:"-"`
+	XXX_unrecognized     []byte                  `json:"-"`
+	XXX_sizecache        int32                   `json:"-"`
 }
 
-func (m *UserMessage) Reset()         { *m = UserMessage{} }
-func (m *UserMessage) String() string { return proto.CompactTextString(m) }
-func (*UserMessage) ProtoMessage()    {}
-func (*UserMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_server_3c936d059d8ff8be, []int{1}
+func (m *ClientMessage) Reset()         { *m = ClientMessage{} }
+func (m *ClientMessage) String() string { return proto.CompactTextString(m) }
+func (*ClientMessage) ProtoMessage()    {}
+func (*ClientMessage) Descriptor() ([]byte, []int) {
+	return fileDescriptor_server_c1380242980e2f19, []int{1}
 }
-func (m *UserMessage) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_UserMessage.Unmarshal(m, b)
+func (m *ClientMessage) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ClientMessage.Unmarshal(m, b)
 }
-func (m *UserMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_UserMessage.Marshal(b, m, deterministic)
+func (m *ClientMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ClientMessage.Marshal(b, m, deterministic)
 }
-func (dst *UserMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UserMessage.Merge(dst, src)
+func (dst *ClientMessage) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ClientMessage.Merge(dst, src)
 }
-func (m *UserMessage) XXX_Size() int {
-	return xxx_messageInfo_UserMessage.Size(m)
+func (m *ClientMessage) XXX_Size() int {
+	return xxx_messageInfo_ClientMessage.Size(m)
 }
-func (m *UserMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_UserMessage.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_UserMessage proto.InternalMessageInfo
-
-type isUserMessage_Content interface {
-	isUserMessage_Content()
+func (m *ClientMessage) XXX_DiscardUnknown() {
+	xxx_messageInfo_ClientMessage.DiscardUnknown(m)
 }
 
-type UserMessage_Ping struct {
+var xxx_messageInfo_ClientMessage proto.InternalMessageInfo
+
+type isClientMessage_Content interface {
+	isClientMessage_Content()
+}
+
+type ClientMessage_Ping struct {
 	Ping *Ping `protobuf:"bytes,2,opt,name=ping,oneof"`
 }
 
-func (*UserMessage_Ping) isUserMessage_Content() {}
+func (*ClientMessage_Ping) isClientMessage_Content() {}
 
-func (m *UserMessage) GetContent() isUserMessage_Content {
+func (m *ClientMessage) GetContent() isClientMessage_Content {
 	if m != nil {
 		return m.Content
 	}
 	return nil
 }
 
-func (m *UserMessage) GetPing() *Ping {
-	if x, ok := m.GetContent().(*UserMessage_Ping); ok {
+func (m *ClientMessage) GetPing() *Ping {
+	if x, ok := m.GetContent().(*ClientMessage_Ping); ok {
 		return x.Ping
 	}
 	return nil
 }
 
 // XXX_OneofFuncs is for the internal use of the proto package.
-func (*UserMessage) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
-	return _UserMessage_OneofMarshaler, _UserMessage_OneofUnmarshaler, _UserMessage_OneofSizer, []interface{}{
-		(*UserMessage_Ping)(nil),
+func (*ClientMessage) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _ClientMessage_OneofMarshaler, _ClientMessage_OneofUnmarshaler, _ClientMessage_OneofSizer, []interface{}{
+		(*ClientMessage_Ping)(nil),
 	}
 }
 
-func _UserMessage_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
-	m := msg.(*UserMessage)
+func _ClientMessage_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*ClientMessage)
 	// content
 	switch x := m.Content.(type) {
-	case *UserMessage_Ping:
+	case *ClientMessage_Ping:
 		b.EncodeVarint(2<<3 | proto.WireBytes)
 		if err := b.EncodeMessage(x.Ping); err != nil {
 			return err
 		}
 	case nil:
 	default:
-		return fmt.Errorf("UserMessage.Content has unexpected type %T", x)
+		return fmt.Errorf("ClientMessage.Content has unexpected type %T", x)
 	}
 	return nil
 }
 
-func _UserMessage_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
-	m := msg.(*UserMessage)
+func _ClientMessage_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*ClientMessage)
 	switch tag {
 	case 2: // content.ping
 		if wire != proto.WireBytes {
@@ -219,18 +219,18 @@ func _UserMessage_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Bu
 		}
 		msg := new(Ping)
 		err := b.DecodeMessage(msg)
-		m.Content = &UserMessage_Ping{msg}
+		m.Content = &ClientMessage_Ping{msg}
 		return true, err
 	default:
 		return false, nil
 	}
 }
 
-func _UserMessage_OneofSizer(msg proto.Message) (n int) {
-	m := msg.(*UserMessage)
+func _ClientMessage_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*ClientMessage)
 	// content
 	switch x := m.Content.(type) {
-	case *UserMessage_Ping:
+	case *ClientMessage_Ping:
 		s := proto.Size(x.Ping)
 		n += 1 // tag and wire
 		n += proto.SizeVarint(uint64(s))
@@ -253,7 +253,7 @@ func (m *Pong) Reset()         { *m = Pong{} }
 func (m *Pong) String() string { return proto.CompactTextString(m) }
 func (*Pong) ProtoMessage()    {}
 func (*Pong) Descriptor() ([]byte, []int) {
-	return fileDescriptor_server_3c936d059d8ff8be, []int{2}
+	return fileDescriptor_server_c1380242980e2f19, []int{2}
 }
 func (m *Pong) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Pong.Unmarshal(m, b)
@@ -291,7 +291,7 @@ func (m *Ping) Reset()         { *m = Ping{} }
 func (m *Ping) String() string { return proto.CompactTextString(m) }
 func (*Ping) ProtoMessage()    {}
 func (*Ping) Descriptor() ([]byte, []int) {
-	return fileDescriptor_server_3c936d059d8ff8be, []int{3}
+	return fileDescriptor_server_c1380242980e2f19, []int{3}
 }
 func (m *Ping) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Ping.Unmarshal(m, b)
@@ -320,23 +320,24 @@ func (m *Ping) GetId() uint32 {
 
 func init() {
 	proto.RegisterType((*Message)(nil), "manifoldserver.Message")
-	proto.RegisterType((*UserMessage)(nil), "manifoldserver.UserMessage")
+	proto.RegisterType((*ClientMessage)(nil), "manifoldserver.ClientMessage")
 	proto.RegisterType((*Pong)(nil), "manifoldserver.Pong")
 	proto.RegisterType((*Ping)(nil), "manifoldserver.Ping")
 }
 
-func init() { proto.RegisterFile("server.proto", fileDescriptor_server_3c936d059d8ff8be) }
+func init() { proto.RegisterFile("server.proto", fileDescriptor_server_c1380242980e2f19) }
 
-var fileDescriptor_server_3c936d059d8ff8be = []byte{
-	// 160 bytes of a gzipped FileDescriptorProto
+var fileDescriptor_server_c1380242980e2f19 = []byte{
+	// 162 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x29, 0x4e, 0x2d, 0x2a,
 	0x4b, 0x2d, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2, 0xcb, 0x4d, 0xcc, 0xcb, 0x4c, 0xcb,
 	0xcf, 0x49, 0x81, 0x88, 0x2a, 0x39, 0x70, 0xb1, 0xfb, 0xa6, 0x16, 0x17, 0x27, 0xa6, 0xa7, 0x0a,
 	0x69, 0x71, 0xb1, 0x14, 0xe4, 0xe7, 0xa5, 0x4b, 0x30, 0x2a, 0x30, 0x6a, 0x70, 0x1b, 0x89, 0xe8,
 	0xa1, 0xaa, 0xd4, 0x0b, 0xc8, 0xcf, 0x4b, 0xf7, 0x60, 0x08, 0x02, 0xab, 0x71, 0xe2, 0xe4, 0x62,
-	0x4f, 0xce, 0xcf, 0x2b, 0x49, 0xcd, 0x2b, 0x51, 0x72, 0xe1, 0xe2, 0x0e, 0x2d, 0x4e, 0x2d, 0x42,
-	0x36, 0x25, 0x33, 0x2f, 0x5d, 0x82, 0x09, 0x87, 0x29, 0x99, 0x50, 0x53, 0x32, 0x51, 0x4d, 0x11,
-	0xe3, 0x62, 0x01, 0x59, 0x20, 0xc4, 0xc7, 0xc5, 0xe4, 0x99, 0x02, 0x76, 0x02, 0x6f, 0x10, 0x93,
-	0x67, 0x0a, 0x58, 0x3c, 0x13, 0x53, 0xdc, 0x89, 0x25, 0x8a, 0xa9, 0x20, 0x29, 0x89, 0x0d, 0xec,
-	0x29, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0x79, 0xe3, 0xc6, 0xea, 0xe4, 0x00, 0x00, 0x00,
+	0x4f, 0xce, 0xcf, 0x2b, 0x49, 0xcd, 0x2b, 0x51, 0x72, 0xe3, 0xe2, 0x75, 0xce, 0xc9, 0x4c, 0xcd,
+	0x2b, 0x41, 0x36, 0x27, 0x33, 0x2f, 0x5d, 0x82, 0x09, 0x87, 0x39, 0x99, 0x50, 0x73, 0x32, 0x51,
+	0xcd, 0x11, 0xe3, 0x62, 0x01, 0x59, 0x21, 0xc4, 0xc7, 0xc5, 0xe4, 0x99, 0x02, 0x76, 0x04, 0x6f,
+	0x10, 0x93, 0x67, 0x0a, 0x58, 0x3c, 0x13, 0x53, 0xdc, 0x89, 0x25, 0x8a, 0xa9, 0x20, 0x29, 0x89,
+	0x0d, 0xec, 0x2d, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0x41, 0x24, 0xd0, 0x67, 0xe6, 0x00,
+	0x00, 0x00,
 }
