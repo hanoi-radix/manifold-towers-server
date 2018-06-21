@@ -37,9 +37,11 @@ RUN chmod +x /go/bin/protoc-gen-go
 
 # Download prebuild protoc binary
 # https://developers.google.com/protocol-buffers/docs/gotutorial#compiling-your-protocol-buffers
-RUN wget https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.0-linux-x86_64.zip -O /tmp/protoc.zip;
-RUN unzip /tmp/protoc.zip -d /tmp/protoc; mv /tmp/protoc/bin/protoc /go/bin/protoc;
-RUN rm -rf /tmp/protoc.zip; rm -rf /tmp/protoc
+RUN wget https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.0-linux-x86_64.zip -O /tmp/protoc.zip && \
+    unzip /tmp/protoc.zip -d /tmp/protoc && \
+    mv /tmp/protoc/bin/protoc /go/bin/protoc && \
+    rm -rf /tmp/protoc.zip && \
+    rm -rf /tmp/protoc
 
 # Run cmd
 CMD [ "./main" ]
