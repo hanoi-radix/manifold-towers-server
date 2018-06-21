@@ -8,7 +8,7 @@ message Message {
     }
 }
 
-message UserMessage {
+message ClientMessage {
     oneof content {
         Ping ping = 2;
     }
